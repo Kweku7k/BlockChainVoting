@@ -1,12 +1,26 @@
 import { Box } from '@chakra-ui/react';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Categoriescard from '../Components/CategoriesCard';
 import Categoriesheader from '../Components/CategoriesHeader';
 import Searchinput from '../Components/SearchInput';
 import random from '../Assets/img/meal.png'
+import axios from 'axios';
+import baseUrl from '../globals';
 
 const Selectedcategory = () => {
+    let {election} = useParams()
+
+    useEffect(() => {
+      axios.get(`${baseUrl}/elections/${election}`)
+      .then((res) => {
+        console.log(res.data);
+    })
+
+        
+    }, [])
+    
+
     return (
         <Box w={'95%'} mx={'auto'}>
             <Categoriesheader currentRoute={'Alpha House Business Influencers'} headerName={'Most Foodian'} subtitle={'16 entries'} />

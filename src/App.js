@@ -17,8 +17,8 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/admin-nomination' element={<AdminNominationPage />} />
         <Route path='/home' element={<Homepage />} />
-        <Route path='/category' element={<Categoriespage />} />
-        <Route path='/select-category' element={<Selectedcategory/>} />
+        <Route path='/:election' element={<Categoriespage />} />
+        <Route path='/:election/:cateogory' element={<Selectedcategory/>} />
         <Route path='/candidates' element={<Candidates />} />
         <Route path='/selected-candidate' element={<Selectedcandidate/>} />
       </Routes>

@@ -1,6 +1,6 @@
-import { Box } from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Box, Container, Spinner } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import Categoriescard from "../Components/CategoriesCard";
 import Categoriesheader from "../Components/CategoriesHeader";
 import Searchinput from "../Components/SearchInput";
@@ -8,12 +8,23 @@ import random from "../Assets/img/meal.png";
 import axios from "axios";
 
 const Categoriespage = () => {
+
+  const [loading, setloading] = useState(true)
+  const [data, setdata] = useState([])
+  const [categoriesData, setCategoriesData] = useState([])
+  let { election } = useParams();
+  console.log(election)
+
   useEffect(() => {
     const mounted = true;
     if (mounted) {
-      axios.get("https://prestovotes.com/election-name/candidates/")
+      axios.get(`https://prestovotes.herokuapp.com/elections/${election}`)
         .then((res) => {
-            console.log(res.data);
+          console.log(res.data);
+            console.log(res.data[0].categories);
+            setdata(res.data)
+            setCategoriesData(res.data[0].categories)
+            setloading(false)
         })
         .catch((error) => console.log(error));
     }
@@ -22,80 +33,45 @@ const Categoriespage = () => {
   }, []);
 
   return (
+    loading 
+    ? 
+    <Box d="flex" w="100%" h="100vh" justifyContent="space-between" alignItems="center">
+      <Spinner size='xl' mx="auto" color='red.500'/>
+    </Box>
+    :
+      <>
+      <Container maxW="container.xl">
+
+
+
     <Box w={"95%"} mx={"auto"}>
       <Categoriesheader
-        currentRoute={"Alpha House Business Influencers"}
-        headerName={"Categories"}
-        subtitle={"16 entries"}
+        currentRoute={"PrestoVotes"}
+        headerName={data[0].name}
+        subtitle={`${categoriesData.length} entries`}
       />
       <Searchinput placeholder={"Search a particular person or category"} />
+
+      
+{categoriesData.map((category)=>(
       <Box>
-        <Link to={"/select-category"}>
+        <Link to={`/${election}/${category.slugName}`}>
           <Categoriescard
-            img={random}
-            emoji={"🌮"}
-            categoryTitle={"Most Foodian"}
-            subcategory={"2 subcategories 6 candidates"}
+            // img={random}
+            emoji={category.emoji}
+            categoryTitle={category.name}
+            subcategory={`${category.totalSubCategories} subcategories`}
           />
         </Link>
       </Box>
-      <Categoriescard
-        emoji={"😭"}
-        categoryTitle={"Most Talkative"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        emoji={"🏌️‍♂️"}
-        categoryTitle={"Most Popular"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        emoji={"🎨"}
-        categoryTitle={"Most Controversial"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        emoji={"😭"}
-        categoryTitle={"Most Foodian"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        emoji={"😭"}
-        categoryTitle={"Most Talkative"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        img={random}
-        categoryTitle={"Most Popular"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        img={random}
-        categoryTitle={"Most Controversial"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        img={random}
-        emoji={"🎟"}
-        categoryTitle={"Most Foodian"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        img={random}
-        categoryTitle={"Most Talkative"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        img={random}
-        categoryTitle={"Most Popular"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
-      <Categoriescard
-        img={random}
-        categoryTitle={"Most Controversial"}
-        subcategory={"2 subcategories 6 candidates"}
-      />
+))}
+
+      
     </Box>
+    </Container>
+
+    </>
+
   );
 };
 
