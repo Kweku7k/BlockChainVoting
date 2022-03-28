@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Categoriescard from "../Components/CategoriesCard";
 import Categoriesheader from "../Components/CategoriesHeader";
-import Searchinput from "../Components/SearchInput";
 import random from "../Assets/img/meal.png";
 import { CreditCard } from "../Components/admin/CreditCard";
 
@@ -12,7 +11,7 @@ const AdminNominationPage = () => {
     <Box w={"95%"} mx={"auto"}>
       <Categoriesheader
         headerName={"Business Influencers"}
-        subtitle={"overview"}
+        subtitle={"Overview"}
       />
       <CreditCard amount={"1,480,600"} votes={"100"} date={"12/12/2022"} />
       <Box display={"flex"} justifyContent={"space-between"} py={'30px'}>
