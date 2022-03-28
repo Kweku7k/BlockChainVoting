@@ -7,6 +7,7 @@ import Candidates from './Pages/Candidates';
 import Selectedcandidate from './Pages/SelectedCandidate';
 import LandingPage from './Pages/LandingPage2';
 import LearningPage from './Pages/LearningPage';
+import AdminNominationPage from './Pages/AdminNominationPage';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<LandingPage />} />
+        <Route path='/admin-nomination' element={<AdminNominationPage />} />
         <Route path='/home' element={<Homepage />} />
         <Route path='/category' element={<Categoriespage />} />
         <Route path='/select-category' element={<Selectedcategory/>} />
