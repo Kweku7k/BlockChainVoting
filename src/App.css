@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'SF-Medium';
+}
+
+.heading{
+  font-family: 'SF-Bold';
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.supportText{
+  font-family: '';
+}
+
+.box{
+  box-shadow: 0px 4px 10px 1px #0000001A;
+}
+
+@font-face {
+  font-family: 'SF-Bold';
+  src: local('SF'), url(./fonts/sf-ui-display-bold.woff) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'SF-Black';
+  src: local('SF'), url(./fonts/sf-ui-display-black.woff) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'SF-Medium';
+  src: local('SF'), url(./fonts/sf-ui-display-medium.woff) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+/* /Users/kweku/Documents/Projects/Calm-Vote/frontend/src/Assets/fonts/sf-black.otf */  
