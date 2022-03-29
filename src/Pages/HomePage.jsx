@@ -8,10 +8,10 @@ import axios from "axios";
 const Homepage = () => {
   const [data, setdata] = useState(null);
 
-  useEffect(() => {
+  useEffect( () => {
     const mounted = true;
     if (mounted) {
-      axios
+         axios
         .get("https://prestovotes.herokuapp.com/elections")
         .then((res) => {
           setdata(res.data);
