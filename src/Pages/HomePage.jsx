@@ -11,8 +11,6 @@ const Homepage = () => {
   const [loading, setloading] = useState(true)
 
   useEffect(() => {
-    const mounted = true;
-    if (mounted) {
       axios
         .get("https://prestovotes.herokuapp.com/elections")
         .then((res) => {
@@ -20,11 +18,7 @@ const Homepage = () => {
           setloading(false)
         })
         .catch((error) => console.log(error));
-
-    }
-
-    return () => {};
-  }, [data]);
+  }, []);
 
   return (
     

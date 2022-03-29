@@ -23,6 +23,7 @@ import {
     Image,
     Grid,
   } from '@chakra-ui/react';
+import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
 
@@ -95,9 +96,10 @@ useEffect(() => {
             align={'center'}
             alignSelf={'center'}
             position={'relative'}>
-            <Button
-            // data-aos="fade-up"
-            // data-aos-duration="3000"
+            <Link to="/home">
+              <Button
+              // data-aos="fade-up"
+              // data-aos-duration="3000"
               colorScheme={'green'}
               bg={'green.400'}
               rounded={'2xl'}
@@ -107,8 +109,9 @@ useEffect(() => {
               _hover={{
                 bg: 'green.500',
               }}>
-              Get Started
-            </Button>
+                Get Started
+              </Button>
+            </Link>
             <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
               Learn more
             </Button>
