@@ -72,7 +72,7 @@ useEffect(() => {
             data-aos-duration="2000"
             fontWeight={600}
             fontFamily="SF-Bold"
-            fontSize={{ base: '2xl', sm: '4xl', md: '9xl' }}
+            fontSize={{ base: '6xl', sm: '6xl', md: '9xl' }}
             lineHeight={'110%'}>
             Make Your Audience feel<br />
             <Text 
@@ -84,7 +84,8 @@ useEffect(() => {
             </Text>
           </Heading>
           <Text 
-          fontSize='3xl'
+          fontSize='2xl'
+          // fontSize={{ base: '2xl', sm: '4xl', md: '2xl' }}
           data-aos="fade-up"
           data-aos-duration="2000"
            color={'gray.500'}>
@@ -154,9 +155,10 @@ useEffect(() => {
     <Text
   bgGradient="linear(to-l, #7928CA,#FF0080)"
   bgClip="text"
-  fontSize="100px"
   fontFamily="SF-Bold"
   fontWeight="extrabold"
+  fontSize={{ base: '6xl', sm: '6xl', md: '9xl' }}
+
   // class="zoom"
 
 >
@@ -166,7 +168,7 @@ useEffect(() => {
 
 
     <Heading as="h4" mb="20">More than 1,200 secure brands use it</Heading>
-    <Box display="flex" flexWrap="wrap" justifyContent="space-between">
+    {/* <Box display="flex" flexWrap="wrap" justifyContent="space-between">
       <Box data-aos="fade-up" data-aos-delay="500" p="3" d="flex" justifyContent="space-between" w="20vw" h="10vh" bg="white" border="4px solid black" borderRadius="10" >
         <Box my="auto" borderRadius="50%" bg="green" w="10" h="10"></Box>
         <Text fontWeight="bold" fontSize="25px" my="auto">PrestoSolutions</Text>
@@ -184,7 +186,7 @@ useEffect(() => {
         <Text fontWeight="bold" fontSize="25px" my="auto">PrestoSolutions</Text>
       </Box>
 
-    </Box>
+    </Box> */}
 
 
 

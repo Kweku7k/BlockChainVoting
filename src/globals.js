@@ -1,3 +1,8 @@
 const baseUrl = "https://prestovotes.herokuapp.com"
 
-export default baseUrl
+const globals = {
+    baseUrl:"https://prestovotes.herokuapp.com",
+    // baseUrl:"http://localhost:5000"
+}
+
+export default globals

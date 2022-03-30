@@ -10,17 +10,23 @@ import axios from 'axios';
 
 const Selectedcategorytype = () => {
 
-    useEffect(() => {
-      const mounted = true;
-      if(mounted){
-          axios.get('').then(() => {
-
-          }).catch(error => console.log(error))
-      }
     
-      return () => {
-      }
-    }, [])
+//   useEffect(() => {
+//     const mounted = true;
+//     if (mounted) {
+//       axios.get(`${globals.baseUrl}/candidates/${election}/${subcategory}`)
+//         .then((res) => {
+//           console.log(res.data);
+//             console.log(res.data[0].categories);
+//             setdata(res.data)
+//             setCategoriesData(res.data[0].categories)
+//             setloading(false)
+//         })
+//         .catch((error) => console.log(error));
+//     }
+
+//     return () => {};
+//   }, []);
     
 
     return (

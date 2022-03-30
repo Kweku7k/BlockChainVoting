@@ -5,6 +5,7 @@ import Custombutton from "../Components/CustomButton";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import LoadingSpinner from "../Components/loadingSpinner";
+import globals from "../globals";
 
 const Homepage = () => {
   const [data, setdata] = useState(null);
@@ -12,7 +13,7 @@ const Homepage = () => {
 
   useEffect(() => {
       axios
-        .get("https://prestovotes.herokuapp.com/elections")
+        .get(`${globals.baseUrl}/elections`)
         .then((res) => {
           setdata(res.data);
           setloading(false)
