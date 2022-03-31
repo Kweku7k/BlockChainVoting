@@ -8,6 +8,7 @@ import Selectedcandidate from './Pages/SelectedCandidate';
 import LandingPage from './Pages/LandingPage2';
 import LearningPage from './Pages/LearningPage';
 import AdminNominationPage from './Pages/AdminNominationPage';
+import SubCategoriespage from './Pages/SubCategoriesPage';
 
 
 function App() {
@@ -17,9 +18,12 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/admin-nomination' element={<AdminNominationPage />} />
         <Route path='/home' element={<Homepage />} />
-        <Route path='/category' element={<Categoriespage />} />
-        <Route path='/select-category' element={<Selectedcategory/>} />
-        <Route path='/candidates' element={<Candidates />} />
+        <Route path='/:election' element={<Categoriespage />} />
+        <Route exact path='/:election/:category' element={<Selectedcategory/>} />
+        <Route exact path='/:election/:category/:subcategory' element={<Candidates/>} />
+        <Route exact path='/:election/:category/:subcategory/:candidateId' element={<Candidates/>} />
+        {/* <Route path='/candidates' element={<Candidates />} /> */}
+
         <Route path='/selected-candidate' element={<Selectedcandidate/>} />
       </Routes>
     </div>

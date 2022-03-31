@@ -9,7 +9,7 @@ const Categoriescard = ({ categoryTitle, subcategory, img, emoji }) => {
                 {img ? <Image style={{objectFit:'cover'}} src={img} w={'100%'} h={20} borderRadius={16}/> : <Text style={{textAlign:'center'}} fontSize={50}> {emoji} </Text> }
 
             </Box>
-            <Box w={'65%'}>
+            <Box w={'80%'}>
                 <Heading fontSize={20}> {categoryTitle} </Heading>
                 <Text color={Colors.ash}> {subcategory} </Text>
             </Box>

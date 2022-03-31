@@ -8,18 +8,19 @@ import random from "../Assets/img/meal.png";
 import axios from "axios";
 import globals from "../globals";
 
-const Categoriespage = () => {
+const SubCategoriespage = () => {
 
   const [loading, setloading] = useState(true)
   const [data, setdata] = useState([])
   const [categoriesData, setCategoriesData] = useState([])
   let { election } = useParams();
+  let { category } = useParams();
   console.log(election)
 
   useEffect(() => {
     const mounted = true;
     if (mounted) {
-      axios.get(`${globals.baseUrl}/categories/${election}`)
+      axios.get(`${globals.baseUrl}/categories/${election}/${category}`)
         .then((res) => {
           console.log(res.data);
             console.log(res.data[0].categories);
@@ -49,7 +50,7 @@ const Categoriespage = () => {
       <Categoriesheader
         currentRoute={"PrestoVotes"}
         headerName={data.name}
-        // subtitle={`${categoriesData.length} entries`}
+        subtitle={`Candidates? Page`}
       />
       <Searchinput placeholder={"Search a particular person or category"} />
 
@@ -76,4 +77,4 @@ const Categoriespage = () => {
   );
 };
 
-export default Categoriespage;
+export default SubCategoriespage;
