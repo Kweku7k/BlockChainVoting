@@ -12,6 +12,7 @@ import SubCategoriespage from './Pages/SubCategoriesPage';
 import NewElection from './Pages/NewElection';
 import NewElectionPage from './Pages/NewElectionPage';
 import NewCategoryPage from './Pages/NewCategoryPage';
+import NewElectionCategory from './Pages/NewElectionCategory';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
         <Route path='/admin-nomination' element={<AdminNominationPage />} />
         <Route path='/home' element={<Homepage />} />
         <Route path='/:election' element={<Categoriespage />} />
-        <Route path='/new' element={<NewElectionPage />} />
+        <Route path='/new' element={<NewElectionPage/>} />
+        <Route path='/new-category' element={<NewElectionCategory/>} />
         <Route path='/newcategory' element={<NewCategoryPage />} />
         <Route exact path='/:election/:category' element={<Selectedcategory/>} />
         <Route exact path='/:election/:category/:subcategory' element={<Candidates/>} />

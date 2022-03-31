@@ -129,7 +129,7 @@ const NewElectionPage = () => {
             </Box>
           </Box>
         </Box>
-        <Box mx="auto" my="20" w="70%">
+        <Box mx="auto" my="20" w="100%">
           <Custombutton
             onclick={() => createElection()}
             buttonText={"Create a new election"}
