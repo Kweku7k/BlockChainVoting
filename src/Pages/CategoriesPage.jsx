@@ -22,9 +22,9 @@ const Categoriespage = () => {
       axios.get(`${globals.baseUrl}/categories/${election}`)
         .then((res) => {
           console.log(res.data);
-            console.log(res.data[0].categories);
+            // console.log(res.data[0].categories);
             setdata(res.data)
-            setCategoriesData(res.data[0].categories)
+            // setCategoriesData(res.data[0].categories)
             setloading(false)
         })
         .catch((error) => console.log(error));
